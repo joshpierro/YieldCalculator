@@ -1,0 +1,24 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#map {
+    height: 250px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.app-container {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+   border: 1px solid #BDBDBD;
+}
+
+.contentItem {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

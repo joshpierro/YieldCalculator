@@ -1,0 +1,45 @@
+﻿ <md-content layout="row" layout-padding  layout-align="end center">
+ <md-button ng-disabled="vm.validInputs" class="md-primary" ng-click="vm.calculate()">Disabled</md-button>
+ </md-content>
+<md-content layout="row" layout-padding>
+     <md-input-container class="md-block" flex>
+            <label>Address</label>
+            <input type="text" ng-model="vm.inputs.address" ng-change="vm.validateModel()">
+        </md-input-container>
+  </md-content>
+<md-content layout="row" layout-padding>
+       <md-input-container class="md-block" flex>
+            <label>Price</label>
+            <input type="text" ng-currency min="0" ng-model="vm.inputs.price" ng-change="vm.validateModel()">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+            <label>Square feet</label>
+            <input type="number" min="0" ng-model="vm.inputs.sqFeet" ng-change="vm.validateModel()">
+        </md-input-container>
+  </md-content>
+<md-content layout="row" layout-padding>
+     <md-input-container class="md-block" flex>
+            <label>Renovations</label>
+            <input type="text" ng-currency min="0" ng-model="vm.inputs.renovations" ng-change="vm.validateModel()">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+            <label>Vintage</label>
+            <md-select  min="0" ng-model="vm.inputs.vintage" ng-change="vm.validateModel()">
+                <md-option ng-repeat="vintage in vm.vintages" value="{{vintage.vintageId}}">
+                    {{vintage.vintage}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+  </md-content>
+<md-content layout="row" layout-padding>
+      <md-input-container class="md-block" flex>
+            <label>HOA Fees</label>
+            <input type="text" ng-currency min="0" ng-model="vm.inputs.hoaFees" ng-change="vm.validateModel()">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+            <label>Rent</label>
+            <input type="text" ng-currency min="0" ng-model="vm.inputs.rent" ng-change="vm.validateModel()">
+        </md-input-container>
+  </md-content>
+
+<!--<pre>{{vm.inputs}}</pre>-->
