@@ -1,47 +1,47 @@
 ﻿<md-content layout="row" layout-padding>
        <md-input-container class="md-block" flex>
             <label>Property Mgt.</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.management">
+            <input type="text" ng-currency min="0" ng-model="vm.assumptions.management" ng-change="vm.isDirty()">
         </md-input-container>
         <md-input-container class="md-block" flex>
             <label>Lease Up</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.leaseUp">
+            <input type="text" ng-currency min="0" ng-model="vm.assumptions.leaseUp" ng-change="vm.isDirty()">
         </md-input-container>
   </md-content>
 <md-content layout="row" layout-padding>
       <md-input-container class="md-block" flex>
             <label>Maintenance</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.maintenance">
+          <input type="text" ng-currency min="0" ng-model="vm.assumptions.maintenance" ng-change="vm.isDirty()">
         </md-input-container>
         <md-input-container class="md-block" flex>
             <label>Taxes</label>
-             <input type="text" ng-currency min="0" ng-model="vm.assumptions.taxes">
+            <input type="text" ng-currency min="0" ng-model="vm.assumptions.taxes" ng-change="vm.isDirty()">
         </md-input-container>
   </md-content>
 <md-content layout="row" layout-padding>
        <md-input-container class="md-block" flex>
             <label>Insurance</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.insurance">
+           <input type="text" ng-currency min="0" ng-model="vm.assumptions.insurance" ng-change="vm.isDirty()">
         </md-input-container>
         <md-input-container class="md-block" flex>
             <label>Special Assessments</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.specialAssessments">
+            <input type="text" ng-currency min="0" ng-model="vm.assumptions.specialAssessments" ng-change="vm.isDirty()">
         </md-input-container>
   </md-content>
 <md-content layout="row" layout-padding>
     <md-input-container class="md-block" flex>
             <label>Turnover</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.turnover">
+        <input type="text" ng-currency min="0" ng-model="vm.assumptions.turnover" ng-change="vm.isDirty()">
         </md-input-container>
         <md-input-container class="md-block" flex>
             <label>Landscaping</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.landscaping">
+            <input type="text" ng-currency min="0" ng-model="vm.assumptions.landscaping" ng-change="vm.isDirty()">
         </md-input-container>
   </md-content>
 <md-content layout="row" layout-padding>
           <md-input-container class="md-block" flex="50">
             <label>Other</label>
-            <input type="text" ng-currency min="0" ng-model="vm.assumptions.other">
+              <input type="text" ng-currency min="0" ng-model="vm.assumptions.other" ng-change="vm.isDirty()">
         </md-input-container>
   </md-content>
 <!--<pre>{{vm.settings}}</pre>-->

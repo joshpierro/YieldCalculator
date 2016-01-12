@@ -1,12 +1,17 @@
 ﻿<div ng-map zoom="vm.zoom" changezoom="vm.setZoom()" center="vm.center"></div>
 <md-card>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Results</span>
-            <span class="md-subhead">Effective Gross Income: $0</span>
-              <span class="md-subhead">Total Expenses: $0</span>
-              <span class="md-subhead">NOI (Pre CapEx Res): $0</span>
-              <span class="md-subhead">Yield: 0%</span>
-          </md-card-title-text>
- </md-card>
+    <md-card-title>
+    <md-card-title-text>
+        <span class="md-headline">Results</span>
+        <span class="md-subhead"><strong>Effective Gross Income:</strong> {{vm.results.egi | currency}}</span>
+        <span class="md-subhead"><strong>Total Expenses:</strong> {{vm.results.expenses | currency}}</span>
+        <span class="md-subhead"><strong>NOI (Pre CapEx Res):</strong> {{vm.results.preCap | currency}}</span>
+        <span class="md-subhead"><strong>NOI (Post CapEx Res):</strong> {{vm.results.postCap | currency}}</span>
+        <span class="md-subhead"><strong>Yield:</strong> {{vm.results.totalYield | number:2}}%</span>
+    
+        <md-content layout="row" layout-padding layout-align="end center" ng-if="vm.results.totalYield!=null">
+            <md-button ui-sref="app.settings" class="md-primary">Edit Assumptions</md-button>
+        </md-content>
+    </md-card-title-text>
+</md-card>
 

@@ -4,18 +4,86 @@
      .module('angularApp')
       .service('Utils', Utils);
 
-    var assumptions,validInputs,currentInputs;
+    var assumptions,validInputs,currentInputs,output;
+
+    function calculate(assumptions) {
+
+        //typescript would be handy here 
+        var expensesObject = {
+            management: assumptions.management,
+            leaseUp: assumptions.leaseUp,
+            maintenance:assumptions.maintenance,
+            taxes: assumptions.taxes,
+            insurance: assumptions.insurance,
+            hoaFees:assumptions.hoaFees,
+            specialAssessments:assumptions.specialAssessments,
+            turnover:assumptions.turnover,
+            landscaping: assumptions.landscaping,
+            other: assumptions.other
+        }
+
+        var expensesArray = [];
+
+        for(var property in expensesObject) {
+            expensesArray.push(expensesObject[property]);
+        }
+
+        var expenses = expensesArray.reduce(function (previousValue, currentValue) {
+            return previousValue + currentValue;
+        });
+
+        var capex = 0;
+        switch (assumptions.vintage) {
+            case '0':
+                capex = .02 * assumptions.effectiveGrossIncome;
+                break;
+            case '1':
+                capex = .03 * assumptions.effectiveGrossIncome;
+                break;
+            case '2':
+                capex = .04 * assumptions.effectiveGrossIncome;
+                break;
+            case '3':
+                capex = .05 * assumptions.effectiveGrossIncome;
+                break;
+            case '4':
+                capex = .05 * assumptions.effectiveGrossIncome;
+                break;
+            case '5':
+                capex = .06 * assumptions.effectiveGrossIncome;
+                break;
+            default: .05 * assumptions.effectiveGrossIncome
+        }
+
+
+        var cost = parseInt(assumptions.price) + parseInt(assumptions.renovations);
+        var preCap = assumptions.effectiveGrossIncome - expenses;
+        var postCap = preCap - capex;
+        var totalYield = (postCap / cost) * 100;
+
+        return {
+            egi: assumptions.effectiveGrossIncome,
+            expenses: expenses,
+            preCap: preCap,
+            postCap: postCap,
+            totalYield: totalYield
+        }
+    }
 
 
     function getAssumptions(inputs) {
-        
-        var rent = inputs.rent
+
+        var rent = inputs.rent;
         var gross = (rent * 12);
         var vacancyLoss = gross * .05;
         var creditLoss = gross * .02;
         var effectiveGrossIncome = gross - (vacancyLoss + creditLoss);
         var sqFeet = inputs.sqFeet;
-        var taxes = inputs.price * .03; 
+        var taxes = inputs.price * .03;
+        var hoaFees = inputs.hoaFees;
+        var price = inputs.price;
+        var renovations = inputs.renovations; 
+        var vintage = inputs.vintage; 
 
         return {
             //income
@@ -23,7 +91,8 @@
             vacancyLoss: vacancyLoss,
             creditLoss: creditLoss,
             effectiveGrossIncome: effectiveGrossIncome,
-           //expenses
+            //expenses
+            hoaFees:hoaFees,
             management:effectiveGrossIncome * .08,
             leaseUp:(rent * .83) / 2,
             maintenance : 60 * 12,
@@ -32,7 +101,11 @@
             insurance: 75 * sqFeet * .0032,
             taxes: taxes,
             specialAssessments: 0,
-            other:0
+            other: 0,
+            price: price,
+            renovations: renovations,
+            //other 
+            vintage: vintage
         }
 
     }
@@ -41,21 +114,24 @@
 
     function Utils() {
 
+
         this.formatAddress = function (address) {
-            console.log(address.address_components)
 
+           var components =  address.address_components.forEach(function (component) {
+              var x =  component.types.filter(function(type) {
+                  return type = 'administrative_area_level_1'; 
+              });
+               console.log(x)
+               //component.types.filter(function (type) {
+               //    return type === 'administrative_area_level_1'; 
+               //});
+           });
 
-            address.address_components.forEach(function (component) {
-                component.types.filter(function (type) {
-                    return type === 'administrative_area_level_1'
-                });
-            });
-
+           console.log(components)
             var propertyAddress = {
                 formattedAddress: address.formatted_address,
                 state:''
             }
-
         };
 
         this.validateModel = function (inputs) {
@@ -71,10 +147,16 @@
             isValid = inputs.vintage ? false : true;
             isValid = inputs.hoaFees ? false : true;
             isValid = inputs.rent ? false : true;
-            this.currentInputs.isValid = isValid
+            this.currentInputs.isValid = isValid;
 
-            if (isValid == false) {
+            //calculate assumptions if they haven't been tweaked 
+            if (isValid === false && (!this.assumptions || this.assumptions.isDirty !== true)) {
                 this.assumptions = getAssumptions(this.currentInputs);
+            }
+
+            //calculate yield
+            if (isValid === false) {
+                this.output = calculate(this.assumptions);
             }
 
             return this.currentInputs;

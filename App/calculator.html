@@ -1,8 +1,4 @@
-﻿ 
-<md-content layout="row" layout-padding  layout-align="end center">
- <md-button ng-disabled="vm.validInputs" class="md-primary" ng-click="vm.calculate()">Calculate!</md-button>
- </md-content>
-<!--<pre>
+﻿ <!--<pre>
 {{vm.inputs | json}}
 </pre>-->
 <md-content layout="row" layout-padding>
@@ -46,4 +42,7 @@
         </md-input-container>
   </md-content>
 
+<md-content layout="row" layout-padding layout-align="end center">
+    <md-button ng-disabled="vm.validInputs" ui-sref="app.results" class="md-primary">See Results!</md-button>
+</md-content>
 <!--<pre>{{vm.inputs}}</pre>-->

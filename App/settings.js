@@ -12,6 +12,10 @@
 
         vm.assumptions = Utils.assumptions;
 
+        vm.isDirty = function() {
+            Utils.assumptions.isDirty = true;
+            Utils.calculate(vm.assumptions);
+        }; 
 
     }
 

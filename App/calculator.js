@@ -70,10 +70,18 @@
         }
 
         vm.vintages = [
-            {vintageId:0,vintage:'pre 1950'},
-            {vintageId: 1, vintage: '2000-20010' }
+            { vintageId: 0, vintage: '2010 or newer' },
+            { vintageId: 1, vintage: '2000-2010' },
+            { vintageId: 2, vintage: '1995-2000' },
+            { vintageId: 3, vintage: '1985-1995' },
+            { vintageId: 4, vintage: '1975-1985' },
+            { vintageId: 5, vintage: '1975 and earlier' }
         ];
 
     }
 
 })();
+
+
+
+                    
