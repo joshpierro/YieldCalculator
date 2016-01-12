@@ -1,36 +1,16 @@
 ﻿ 
 <md-content layout="row" layout-padding  layout-align="end center">
- <md-button ng-disabled="vm.validInputs" class="md-primary" ng-click="vm.calculate()">Disabled</md-button>
+ <md-button ng-disabled="vm.validInputs" class="md-primary" ng-click="vm.calculate()">Calculate!</md-button>
  </md-content>
+<!--<pre>
+{{vm.inputs | json}}
+</pre>-->
 <md-content layout="row" layout-padding>
-    <md-input-container class="md-block" flex>
-        <md-autocomplete name="address" required
-                         md-input-name="address"
-                         md-no-cache="vm.noCache"
-                         md-search-text="vm.searchText"
-                         md-items="location in vm.getAddresses(vm.searchText)"
-                         md-item-text="location.display"
-                         md-search-text-change="vm.searchTextChanged(vm.searchText)"
-                         md-selected-item-change="vm.addressSelected(location)"
-                         md-autoselect="true"
-                         md-autofocus="false"
-                         md-min-length="4"
-                         md-floating-label="Full Address">
-            <md-item-template>
-                <span md-highlight-text="vm.searchText">{{ location.display}}</span>
-            </md-item-template>
-            <md-not-found>
-                No matches found for "{{vm.searchText}}".
-            </md-not-found>
-            <div ng-messages="vm.registrationForm.$error" ng-if="vm.registrationForm.$touched" class="online-reg-form-error">
-                <div ng-message="required">
-                    You <b>must</b> enter an address.
-                </div>
-            </div>
-        </md-autocomplete>
-    </md-input-container>
-
+     <md-input-container class="md-block" flex id="locationField">
+            <input type="text"  aria-label="address" ng-model="vm.inputs.address" ng-change="vm.validateModel()" id="autocomplete">
+        </md-input-container>
 </md-content>
+
 <md-content layout="row" layout-padding>
        <md-input-container class="md-block" flex>
             <label>Price</label>
