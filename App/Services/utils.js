@@ -4,10 +4,11 @@
      .module('angularApp')
       .service('Utils', Utils);
 
-    var assumptions,validInputs,currentInputs,output;
+    var assumptions,validInputs,currentInputs,output,target, address;
 
-    function calculate(assumptions) {
+    function calculateYield(assumptions) {
 
+     //   console.log(assumptions)
         //typescript would be handy here 
         var expensesObject = {
             management: assumptions.management,
@@ -61,6 +62,7 @@
         var postCap = preCap - capex;
         var totalYield = (postCap / cost) * 100;
 
+       
         return {
             egi: assumptions.effectiveGrossIncome,
             expenses: expenses,
@@ -79,11 +81,47 @@
         var creditLoss = gross * .02;
         var effectiveGrossIncome = gross - (vacancyLoss + creditLoss);
         var sqFeet = inputs.sqFeet;
-        var taxes = inputs.price * .03;
         var hoaFees = inputs.hoaFees;
         var price = inputs.price;
         var renovations = inputs.renovations; 
-        var vintage = inputs.vintage; 
+        var vintage = inputs.vintage;
+        var taxes;
+        var state = ''; 
+       
+        
+        if (address && address.state) {
+            state = this.address.state; 
+        } else if(inputs.propertyAddress){
+            state = inputs.propertyAddress.state;
+        }
+
+        switch (state) {
+            case 'Arizona':
+                taxes = .011;
+                break;
+            case 'California':
+                taxes = .012;
+                break;
+            case 'Colorado':
+                taxes = .012;
+                break;
+            case 'Florida':
+                taxes = .012;
+                break;
+            case 'Georgia':
+                taxes = .012;
+                break;
+            case 'Nevada':
+                taxes = .012;
+                break;
+            case 'Texas':
+                taxes = .027;
+                break;
+            default: .012
+        }
+
+        taxes = price * taxes;
+
 
         return {
             //income
@@ -114,24 +152,27 @@
 
     function Utils() {
 
-
         this.formatAddress = function (address) {
 
+            //todo refactor this in a more functional style
+           var state; 
            var components =  address.address_components.forEach(function (component) {
-              var x =  component.types.filter(function(type) {
-                  return type = 'administrative_area_level_1'; 
+                component.types.forEach(function(type) {
+                    if (type === 'administrative_area_level_1') {
+                        state = component.long_name
+                    };
               });
-               console.log(x)
-               //component.types.filter(function (type) {
-               //    return type === 'administrative_area_level_1'; 
-               //});
+
            });
 
-           console.log(components)
-            var propertyAddress = {
+           var addr =  {
                 formattedAddress: address.formatted_address,
-                state:''
-            }
+                state: state,
+                lat: address.geometry.location.lat(),
+                lng: address.geometry.location.lng()
+           }
+           this.address = addr;
+           return addr; 
         };
 
         this.validateModel = function (inputs) {
@@ -156,7 +197,9 @@
 
             //calculate yield
             if (isValid === false) {
-                this.output = calculate(this.assumptions);
+                this.assumptions.price = inputs.price;
+                this.assumptions.renovations = inputs.renovations;
+                this.output = calculateYield(this.assumptions);
             }
 
             return this.currentInputs;
@@ -166,6 +209,9 @@
             this.assumptions = getAssumptions(inputs);
         }; 
 
+        this.recalculate = function (assumptions) {
+            this.output = calculateYield(assumptions);
+        }
     }
 
 })();

@@ -1,28 +1,6 @@
 ﻿(function () {
     'use strict';
 
-  
-    //var placeSearch, autocomplete;
-    //var componentForm = {
-    //    street_number: 'short_name',
-    //    route: 'long_name',
-    //    locality: 'long_name',
-    //    administrative_area_level_1: 'short_name',
-    //    country: 'long_name',
-    //    postal_code: 'short_name'
-    //};
-
-    //function initAutocomplete() {
-
-    //    autocomplete = new google.maps.places.Autocomplete(
-    //        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-    //        { types: ['geocode'] });
-
-    //    autocomplete.addListener('place_changed', fillInAddress);
-    //}
-
-
-
 
     angular
         .module('angularApp')
@@ -32,10 +10,12 @@
 
     function Calculator($scope,$location, $state, $stateParams, AppData, Utils) {
         var vm = this;
-
+        vm.inputs = {};
+        vm.validInputs = true;
   
         function getAddress() {
-            Utils.formatAddress(autocomplete.getPlace());
+            vm.inputs.propertyAddress = Utils.formatAddress(autocomplete.getPlace());
+            vm.inputs.address = vm.inputs.propertyAddress.formattedAddress;
         }
 
 
@@ -48,8 +28,7 @@
 
         autocomplete.addListener('place_changed', getAddress);
 
-        vm.inputs = {};
-        vm.validInputs = true;
+       
 
         if (Utils.currentInputs) {
             vm.inputs = Utils.currentInputs
@@ -58,17 +37,19 @@
         vm.validateModel = function () {
             vm.validInputs = Utils.validateModel(vm.inputs).isValid;
             vm.inputs = Utils.currentInputs;
+            vm.address = Utils.address;
         }
 
         vm.calculate = function () {
             Utils.calculate(vm.inputs);
         }
 
+      //set tab (if not already set)
+       $scope.$parent.vm.target = 0;
+     
 
-        vm.geocode = function () {
-            
-        }
-
+       console.log(AppData.getVintages())
+        //todo get these from an api 
         vm.vintages = [
             { vintageId: 0, vintage: '2010 or newer' },
             { vintageId: 1, vintage: '2000-2010' },

@@ -5,30 +5,26 @@
                 <h2 class="md-flex">Yield Calculator</h2>
             </div>
         </md-toolbar>
+
+
         <md-content>
-            <md-tabs md-dynamic-height md-border-bottom>
+            <md-tabs md-dynamic-height md-border-bottom md-selected="vm.target">
                 <md-tab label="Calculator" ui-sref="app.calculator" ng-click="vm.setAppState('calculator')">
                     <md-content class="md-padding">
-                        <div ng-if="vm.appState=='calculator'">
-                            <div ui-view></div>
-                        </div>
                      </md-content>
                 </md-tab>
                 <md-tab label="Results" ui-sref="app.results" ng-click="vm.setAppState('results')">
                     <md-content class="md-padding">
-                        <div ng-if="vm.appState=='results'">
-                            <div ui-view></div>
-                        </div>
                     </md-content>
                 </md-tab>
                 <md-tab label="Settings" ui-sref="app.settings">
                     <md-content class="md-padding">
-                        <div>
-                            <div ui-view></div>
-                        </div>
                     </md-content>
                 </md-tab>
             </md-tabs>
         </md-content>
+                 <div>
+                     <div ui-view></div>
+                 </div>
     </div>
 </div>
