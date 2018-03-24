@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {MatToolbarModule} from "@angular/material";
+import {MatCardModule,MatToolbarModule} from "@angular/material";
 import {NgModule} from '@angular/core';
 
 
@@ -12,6 +12,7 @@ import {AppComponent} from './app.component';
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     MatToolbarModule,
   ],
   providers: [],
