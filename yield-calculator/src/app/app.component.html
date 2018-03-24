@@ -1,3 +1,18 @@
 <mat-toolbar color="primary">
-  <span>YieldCalculator</span>
+  <div fxFlex fxLayout="row">
+    <div fxFlex="90">Yield Calculator</div>
+    <div fxFlex="10">
+      <i class="material-icons"
+         routerLink="/settings"
+         *ngIf="path!=='/settings'">
+        settings
+      </i>
+      <i class="material-icons"
+         routerLink="/"
+         *ngIf="path!=='/'">
+        home
+      </i>
+    </div>
+  </div>
 </mat-toolbar>
+<router-outlet></router-outlet>
