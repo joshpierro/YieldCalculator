@@ -1,22 +1,27 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {MatCardModule,MatToolbarModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatInputModule, MatToolbarModule} from "@angular/material";
 import {NgModule} from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import {ReactiveFormsModule} from "@angular/forms";
+import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SettingsComponent } from './settings/settings.component';
+import {HomeComponent} from './home/home.component';
+import {SettingsComponent} from './settings/settings.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
-
+import {ExpensesComponent} from './expenses/expenses.component';
+import {IncomeComponent} from './income/income.component';
 
 const appRoutes: Routes = [
-  { path: '',
-    component: SettingsComponent,
-    data: { title: 'Home' },
+  {
+    path: '',
+    component: HomeComponent,
+    data: {title: 'Home'},
   },
-  { path: 'settings',
+  {
+    path: 'settings',
     component: SettingsComponent,
-    data: { title: 'Settings' }
+    data: {title: 'Settings'}
   }
 ];
 
@@ -24,14 +29,21 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    ExpensesComponent,
+    IncomeComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FlexLayoutModule,
+    MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
+    MatInputModule,
     MatToolbarModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
   providers: [],
   bootstrap: [AppComponent]

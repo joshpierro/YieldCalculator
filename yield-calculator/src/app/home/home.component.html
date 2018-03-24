@@ -1,1 +1,40 @@
-form
+<mat-accordion>
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <strong>Expenses</strong>
+      </mat-panel-title>
+      <mat-panel-description></mat-panel-description>
+
+    </mat-expansion-panel-header>
+    <app-expenses></app-expenses>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <strong>Income</strong>
+      </mat-panel-title>
+      <mat-panel-description></mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-income></app-income>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="prevStep()">Back</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-card>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions >
+    <div fxFlex fxLayout="row">
+      <div fxFlex fxFlexOffset="2">Yield: 8%</div>
+      <div fxFlex="10">
+        <button mat-button color="warn" (click)="reset()">reset</button>
+      </div>
+    </div>
+  </mat-card-actions>
+</mat-card>

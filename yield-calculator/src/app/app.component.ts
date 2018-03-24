@@ -20,6 +20,5 @@ export class AppComponent {
         this.path = event.url;
       }
     });
-
   }
 }

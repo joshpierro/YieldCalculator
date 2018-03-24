@@ -1,0 +1,16 @@
+<form [formGroup]="expenseForm">
+  <mat-form-field class="example-full-width">
+    <input matInput
+           placeholder="purchase price"
+           value="100000"
+           [formControl]="purchasePriceControl"
+           type="number">
+    <mat-error *ngIf="purchasePriceControl.hasError('required')">
+     Purchase Price is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="taxes" value="2500">
+  </mat-form-field>
+</form>
