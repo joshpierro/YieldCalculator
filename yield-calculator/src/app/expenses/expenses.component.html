@@ -3,14 +3,20 @@
     <input matInput
            placeholder="purchase price"
            value="100000"
-           [formControl]="purchasePriceControl"
+           formControlName="purchasePriceControl"
+           [ngModel]="purchasePriceControl"
            type="number">
-    <mat-error *ngIf="purchasePriceControl.hasError('required')">
+    <mat-error *ngIf="expenseForm.controls.purchasePriceControl.hasError('required')">
      Purchase Price is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-
   <mat-form-field class="example-full-width">
     <input matInput placeholder="taxes" value="2500">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="maintenance" value="1000">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="other" value="2500">
   </mat-form-field>
 </form>

@@ -25,16 +25,13 @@
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-
 <mat-card>
   <mat-card-content>
+    <strong>Yield: 8%</strong>
   </mat-card-content>
-  <mat-card-actions >
-    <div fxFlex fxLayout="row">
-      <div fxFlex fxFlexOffset="2">Yield: 8%</div>
-      <div fxFlex="10">
-        <button mat-button color="warn" (click)="reset()">reset</button>
-      </div>
+  <mat-card-actions>
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-button color="warn" (click)="reset()">reset</button>
     </div>
   </mat-card-actions>
 </mat-card>

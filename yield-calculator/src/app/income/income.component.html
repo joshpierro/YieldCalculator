@@ -1,3 +1,14 @@
-<p>
-  income works!
-</p>
+<form [formGroup]="incomeForm">
+  <mat-form-field class="example-full-width">
+    <span matPrefix>$</span>
+    <input matInput
+           placeholder="Monthly Rent"
+           value="1200"
+           formControlName="incomeControl"
+           [ngModel]="income"
+           type="number">
+    <mat-error *ngIf="incomeForm.controls.incomeControl.hasError('required')">
+      Monthly Rent is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, FormBuilder}from '@angular/forms';
+import {FormGroup, FormControl, Validators}from '@angular/forms';
 
 @Component({
   selector: 'app-expenses',
@@ -7,15 +7,26 @@ import {FormGroup, FormControl, Validators, FormBuilder}from '@angular/forms';
   styleUrls: ['./expenses.component.css']
 })
 export class ExpensesComponent implements OnInit {
-  readonly IS_NUMBER_REGEX = new RegExp(/^[+-]?\d+(\.\d+)?([Ee][+-]?\d+)?$/g);
-  expenseForm: FormGroup;
 
-  purchasePriceControl = new FormControl('', [
-    Validators.required
-  ]);
+  purchasePrice = 100001;
+  expenseForm: FormGroup;
+  purchasePriceControl:FormControl;
+
 
   constructor() {
-    this.expenseForm = new FormGroup({});
+    this.setupForm();
+  }
+
+  private setupForm():void {
+
+    this.expenseForm = new FormGroup({
+      purchasePriceControl: new FormControl('', [Validators.required])
+    });
+
+
+    this.expenseForm.valueChanges.subscribe(val => {
+      console.log(val);
+    });
   }
 
   ngOnInit() {
