@@ -1,22 +1,43 @@
 <form [formGroup]="expenseForm">
-  <mat-form-field class="example-full-width">
+  <mat-form-field>
+    <span matPrefix>$</span>
     <input matInput
-           placeholder="purchase price"
-           value="100000"
-           formControlName="purchasePriceControl"
-           [ngModel]="purchasePriceControl"
+           placeholder="Purchase Price"
+           formControlName="purchasePrice"
+           [(ngModel)]="expense.purchasePrice"
            type="number">
-    <mat-error *ngIf="expenseForm.controls.purchasePriceControl.hasError('required')">
-     Purchase Price is <strong>required</strong>
+    <mat-error *ngIf="expenseForm.controls.purchasePrice.hasError('required')">
+      Purchase Price is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="taxes" value="2500">
+  <mat-form-field>
+    <span matPrefix>$</span>
+    <input matInput
+           placeholder="Taxes"
+           value="1200"
+           formControlName="taxes"
+           type="number">
+    <mat-error *ngIf="expenseForm.controls.taxes.hasError('required')">
+      Taxes are <strong>required</strong>
+    </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="maintenance" value="1000">
+  <mat-form-field>
+    <span matPrefix>$</span>
+    <input matInput
+           placeholder="Maintenance"
+           value="600"
+           formControlName="maintenance"
+           type="number">
+    <mat-error *ngIf="expenseForm.controls.maintenance.hasError('required')">
+      Maintenance is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="other" value="2500">
+  <mat-form-field>
+    <span matPrefix>$</span>
+    <input matInput
+           placeholder="Other"
+           value="0"
+           formControlName="other"
+           type="number">
   </mat-form-field>
 </form>

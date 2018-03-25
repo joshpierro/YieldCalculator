@@ -5,4 +5,8 @@ export class Expense{
   taxes:number;
   turnover:number;
   other:number;
+
+  constructor(purchasePrice: number) {
+    this.purchasePrice = purchasePrice;
+  }
 }

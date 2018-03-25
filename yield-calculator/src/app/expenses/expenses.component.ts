@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators}from '@angular/forms';
+import {Income} from "../models/Income";
+import {Expense} from "../models/Expense";
 
 @Component({
   selector: 'app-expenses',
@@ -8,24 +10,26 @@ import {FormGroup, FormControl, Validators}from '@angular/forms';
 })
 export class ExpensesComponent implements OnInit {
 
-  purchasePrice = 100001;
   expenseForm: FormGroup;
-  purchasePriceControl:FormControl;
-
+  @Input() expense: Expense;
+  @Output() expenseChange = new EventEmitter<Expense>();
 
   constructor() {
     this.setupForm();
   }
 
-  private setupForm():void {
+  private setupForm(): void {
 
     this.expenseForm = new FormGroup({
-      purchasePriceControl: new FormControl('', [Validators.required])
+      purchasePrice: new FormControl('', [Validators.required]),
+      taxes: new FormControl('', [Validators.required]),
+      maintenance: new FormControl('', [Validators.required]),
+      other: new FormControl()
     });
 
 
     this.expenseForm.valueChanges.subscribe(val => {
-      console.log(val);
+      this.expenseChange.emit(val);
     });
   }
 

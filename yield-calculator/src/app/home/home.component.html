@@ -5,9 +5,8 @@
         <strong>Expenses</strong>
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
-
     </mat-expansion-panel-header>
-    <app-expenses></app-expenses>
+    <app-expenses [(expense)]="expense"></app-expenses>
     <mat-action-row>
       <button mat-button color="primary" (click)="nextStep()">Next</button>
     </mat-action-row>
@@ -19,7 +18,8 @@
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-    <app-income></app-income>
+    {{income.rent}}
+    <app-income [(income)]="income"></app-income>
     <mat-action-row>
       <button mat-button color="primary" (click)="prevStep()">Back</button>
     </mat-action-row>

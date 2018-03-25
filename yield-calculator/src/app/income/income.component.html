@@ -1,14 +1,15 @@
 <form [formGroup]="incomeForm">
-  <mat-form-field class="example-full-width">
+  <mat-form-field>
     <span matPrefix>$</span>
     <input matInput
            placeholder="Monthly Rent"
-           value="1200"
-           formControlName="incomeControl"
-           [ngModel]="income"
+           formControlName="rent"
+           [(ngModel)]="income.rent"
            type="number">
-    <mat-error *ngIf="incomeForm.controls.incomeControl.hasError('required')">
+    <mat-error *ngIf="incomeForm.controls.rent.hasError('required')">
       Monthly Rent is <strong>required</strong>
     </mat-error>
   </mat-form-field>
 </form>
+
+

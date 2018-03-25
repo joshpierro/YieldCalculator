@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import {Income} from "../models/Income";
+import {Expense} from "../models/Expense";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-   step = 0;
+   step:number = 0;
+   income:Income;
+   expense:Expense;
 
-
-  constructor() { }
+  constructor() {
+   this.income = new Income(1300);
+   this.expense = new Expense(125000);
+  }
 
   ngOnInit() {  }
 
@@ -26,6 +32,5 @@ export class HomeComponent implements OnInit {
   }
 
   reset(){
-
   }
 }
