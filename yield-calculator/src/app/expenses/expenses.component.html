@@ -14,8 +14,8 @@
     <span matPrefix>$</span>
     <input matInput
            placeholder="Taxes"
-           value="1200"
            formControlName="taxes"
+           [(ngModel)]="expense.taxes"
            type="number">
     <mat-error *ngIf="expenseForm.controls.taxes.hasError('required')">
       Taxes are <strong>required</strong>
@@ -25,7 +25,7 @@
     <span matPrefix>$</span>
     <input matInput
            placeholder="Maintenance"
-           value="600"
+           [(ngModel)]="expense.maintenance"
            formControlName="maintenance"
            type="number">
     <mat-error *ngIf="expenseForm.controls.maintenance.hasError('required')">
@@ -36,7 +36,7 @@
     <span matPrefix>$</span>
     <input matInput
            placeholder="Other"
-           value="0"
+           [(ngModel)]="expense.other"
            formControlName="other"
            type="number">
   </mat-form-field>

@@ -1,6 +1,6 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {Income} from "../models/Income";
-import {Expense} from "../models/Expense";
+import {CalculatorService} from "../calculator.service";
+import {Yield} from "../models/Yield";
 
 @Component({
   selector: 'app-home',
@@ -8,16 +8,16 @@ import {Expense} from "../models/Expense";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-   step:number = 0;
-   income:Income;
-   expense:Expense;
+  step: number = 0;
+  yield:Yield;
+  calculatorService: CalculatorService;
 
-  constructor() {
-   this.income = new Income(1300);
-   this.expense = new Expense(125000);
+  constructor(calculatorService: CalculatorService) {
+    this.yield = calculatorService.yield;
   }
 
-  ngOnInit() {  }
+  ngOnInit() {
+  }
 
   setStep(index: number) {
     this.step = index;
@@ -31,6 +31,6 @@ export class HomeComponent implements OnInit {
     this.step--;
   }
 
-  reset(){
+  reset() {
   }
 }

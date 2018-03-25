@@ -11,6 +11,8 @@ import {SettingsComponent} from './settings/settings.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ExpensesComponent} from './expenses/expenses.component';
 import {IncomeComponent} from './income/income.component';
+import {CalculatorService} from "./calculator.service";
+
 
 const appRoutes: Routes = [
   {
@@ -46,8 +48,9 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
-  providers: [],
+  providers: [CalculatorService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormGroup, FormControl, Validators}from '@angular/forms';
 import {Income} from "../models/Income";
+import {CalculatorService} from "../calculator.service";
 
 @Component({
   selector: 'app-income',
@@ -9,11 +10,13 @@ import {Income} from "../models/Income";
 })
 export class IncomeComponent implements OnInit {
 
+  calculatorService:CalculatorService;
   incomeForm: FormGroup;
   @Input() income:Income;
   @Output() incomeChange = new EventEmitter<Income>();
 
-  constructor() {
+  constructor(calculatorService:CalculatorService) {
+    this.calculatorService = calculatorService;
     this.setupForm();
   }
 
@@ -25,6 +28,7 @@ export class IncomeComponent implements OnInit {
 
     this.incomeForm.valueChanges.subscribe(val => {
       this.incomeChange.emit(val);
+      this.calculatorService.calculateYield();
     });
   }
 

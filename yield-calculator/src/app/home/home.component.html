@@ -6,7 +6,7 @@
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-    <app-expenses [(expense)]="expense"></app-expenses>
+    <app-expenses [(expense)]="yield.expense"></app-expenses>
     <mat-action-row>
       <button mat-button color="primary" (click)="nextStep()">Next</button>
     </mat-action-row>
@@ -18,8 +18,7 @@
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-    {{income.rent}}
-    <app-income [(income)]="income"></app-income>
+    <app-income [(income)]="yield.income"></app-income>
     <mat-action-row>
       <button mat-button color="primary" (click)="prevStep()">Back</button>
     </mat-action-row>
@@ -27,7 +26,7 @@
 </mat-accordion>
 <mat-card>
   <mat-card-content>
-    <strong>Yield: 8%</strong>
+    <strong>Gross Yield: {{yield.grossYield | number}}%</strong>  --  <strong>Net Yield: {{yield.netYield | number}}%</strong>
   </mat-card-content>
   <mat-card-actions>
     <div fxLayout="row" fxLayoutAlign="end center">
