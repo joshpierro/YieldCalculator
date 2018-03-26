@@ -6,7 +6,7 @@
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-    <app-expenses [(expense)]="yield.expense"></app-expenses>
+    <app-expenses [expense]="yield.expense"></app-expenses>
     <mat-action-row>
       <button mat-button color="primary" (click)="nextStep()">Next</button>
     </mat-action-row>
@@ -18,7 +18,7 @@
       </mat-panel-title>
       <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-    <app-income [(income)]="yield.income"></app-income>
+    <app-income [income]="yield.income"></app-income>
     <mat-action-row>
       <button mat-button color="primary" (click)="prevStep()">Back</button>
     </mat-action-row>

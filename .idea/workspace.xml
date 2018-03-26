@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e161982e-1087-467b-80f0-073497a3f10b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yield-calculator/src/app/calculator.service.ts" afterPath="$PROJECT_DIR$/yield-calculator/src/app/calculator.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.ts" afterPath="$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="expenses.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="expenses.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="175">
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -45,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+            <state relative-caret-position="89">
+              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -59,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="15" selection-end-column="8" />
+              <caret line="15" column="8" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="15" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -101,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/calculator.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="10" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -170,7 +168,6 @@
         <option value="$PROJECT_DIR$/yield-calculator/src/app/income/income.component.html" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/models/Preset.ts" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/models/Expense.ts" />
-        <option value="$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.html" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/settings.service.ts" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/settings.service.spec.ts" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/app.module.ts" />
@@ -180,6 +177,7 @@
         <option value="$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.ts" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/calculator.service.ts" />
         <option value="$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html" />
+        <option value="$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.html" />
       </list>
     </option>
   </component>
@@ -302,6 +300,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YieldCalculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YieldCalculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yield-calculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expenses" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,15 +462,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521863095191</updated>
-      <workItem from="1521863096452" duration="22516000" />
+      <workItem from="1521863096452" duration="23746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22516000" />
+    <option name="totallyTimeSpent" value="23746000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -624,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yield-calculator/node_modules/@types/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -671,7 +687,7 @@
     <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/calculator.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="10" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
@@ -681,15 +697,23 @@
     <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="15" selection-end-column="8" />
+          <caret line="15" column="8" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="15" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        <state relative-caret-position="89">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yield-calculator/src/app/expenses/expenses.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding />
         </state>
       </provider>
