@@ -7,10 +7,10 @@ import {Expense} from "./models/Expense";
 export class CalculatorService {
 
   yield:Yield;
-  readonly RENT = 1050;
-  readonly PURCHASE_PRICE = 127000;
-  readonly TAXES = 1700;
-  readonly MAINTENENCE = 625;
+  readonly RENT = 1900;
+  readonly PURCHASE_PRICE = 260000;
+  readonly TAXES = 2750;
+  readonly MAINTENENCE = 1200;
   readonly OTHER = 0;
 
   constructor() {

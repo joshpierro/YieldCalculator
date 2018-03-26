@@ -25,12 +25,15 @@
   </mat-expansion-panel>
 </mat-accordion>
 <mat-card>
+  <h4>Yield</h4>
   <mat-card-content>
-    <strong>Gross Yield: {{yield.grossYield | number}}%</strong>  --  <strong>Net Yield: {{yield.netYield | number}}%</strong>
+    <div fxFlex fxLayout="row">
+      <div fxFlex="20">Gross Yield: {{yield.grossYield | number}}%</div>
+      <div fxFlex="20"> Net Yield: {{yield.netYield | number}}%</div>
+    </div>
+    <div>
+    </div>
   </mat-card-content>
   <mat-card-actions>
-    <div fxLayout="row" fxLayoutAlign="end center">
-      <button mat-button color="warn" (click)="reset()">reset</button>
-    </div>
   </mat-card-actions>
 </mat-card>
