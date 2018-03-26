@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e161982e-1087-467b-80f0-073497a3f10b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/yield.png" afterPath="$PROJECT_DIR$/images/yield.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/yield-calculator/src/app/home/home.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -329,6 +329,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YieldCalculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YieldCalculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -351,6 +365,7 @@
       <recent name="C:\josh\YieldCalculator\yield-calculator\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\josh\YieldCalculator\images" />
       <recent name="C:\josh\YieldCalculator\yield-calculator\src" />
     </key>
   </component>
@@ -462,12 +477,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521863095191</updated>
-      <workItem from="1521863096452" duration="24106000" />
+      <workItem from="1521863096452" duration="24236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24106000" />
+    <option name="totallyTimeSpent" value="24236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
