@@ -10,6 +10,8 @@ export class AppComponent {
   private currentRoute: Router;
   public path: string;
 
+  title = 'YieldCalculator';
+
   constructor(private route: Router) {
     this.currentRoute = route;
   }

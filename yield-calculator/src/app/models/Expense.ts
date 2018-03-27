@@ -6,7 +6,7 @@ export class Expense {
   turnover: number;
   other: number;
 
-  constructor(purchasePrice: number, taxes: number, maintenance: number, other: number) {
+  constructor(purchasePrice?: number, taxes?: number, maintenance?: number, other?: number) {
     this.purchasePrice = purchasePrice;
     this.taxes = taxes;
     this.maintenance = maintenance;

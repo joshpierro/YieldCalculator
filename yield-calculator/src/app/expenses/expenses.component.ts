@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators}from '@angular/forms';
-import {Income} from "../models/Income";
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Expense} from "../models/Expense";
 import {CalculatorService} from "../calculator.service";
 
@@ -13,7 +12,7 @@ export class ExpensesComponent implements OnInit {
 
   calculatorService:CalculatorService;
   expenseForm: FormGroup;
-  @Input() expense: Expense;
+  @Input() expense: Expense = new Expense();
   @Output() expenseChange = new EventEmitter<Expense>();
 
   constructor(calculatorService:CalculatorService) {
@@ -37,7 +36,6 @@ export class ExpensesComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

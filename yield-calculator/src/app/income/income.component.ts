@@ -12,7 +12,7 @@ export class IncomeComponent implements OnInit {
 
   calculatorService:CalculatorService;
   incomeForm: FormGroup;
-  @Input() income:Income;
+  @Input() income:Income = new Income();
   @Output() incomeChange = new EventEmitter<Income>();
 
   constructor(calculatorService:CalculatorService) {
