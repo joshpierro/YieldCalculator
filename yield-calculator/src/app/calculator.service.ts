@@ -7,18 +7,18 @@ import {Expense} from "./models/Expense";
 export class CalculatorService {
 
   yield:Yield;
-  readonly RENT = 1900;
-  readonly PURCHASE_PRICE = 260000;
-  readonly TAXES = 2750;
-  readonly MAINTENENCE = 1200;
-  readonly OTHER = 0;
+  rent:number = 1900;
+  purchasePrice:number = 260000;
+  taxes:number = 2750;
+  maintenance = 1200;
+  other = 0;
 
   constructor() {
     this.setPresetConditions();
   }
 
   private setPresetConditions():void {
-    this.yield = new Yield(new Income(this.RENT), new Expense(this.PURCHASE_PRICE, this.TAXES,this.MAINTENENCE,this.OTHER));
+    this.yield = new Yield(new Income(this.rent), new Expense(this.purchasePrice, this.taxes,this.maintenance,this.other));
     this.calculateYield();
   }
 
